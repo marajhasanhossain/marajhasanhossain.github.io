@@ -106,7 +106,8 @@ body {
   display: flex;
   align-items: center;
   position: relative;
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  background: url("background.jpg") center/cover no-repeat,
+    linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
   overflow: hidden;
 }
 
@@ -117,10 +118,8 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1" fill="%2364ffda" opacity="0.3"><animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/></circle><circle cx="80" cy="60" r="1" fill="%2364ffda" opacity="0.3"><animate attributeName="opacity" values="0.3;1;0.3" dur="3s" repeatCount="indefinite"/></circle><circle cx="60" cy="80" r="1" fill="%2364ffda" opacity="0.3"><animate attributeName="opacity" values="0.3;1;0.3" dur="2.5s" repeatCount="indefinite"/></circle></svg>')
-    repeat;
-  opacity: 0.1;
-  animation: float 20s ease-in-out infinite;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
 }
 
 .hero-container {
@@ -136,6 +135,8 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
+  position: relative;
+  z-index: 2;
 }
 
 .hero-title {
@@ -147,6 +148,9 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1.2;
+  /* text-shadow: 2px 2px 4px rgba(39, 103, 106, 0.8); */
+  text-shadow: -9px 0px 1px rgb(106 248 255 / 80%);
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.8));
 }
 
 .typing-text {
@@ -162,9 +166,10 @@ body {
 
 .hero-subtitle {
   font-size: 1.2rem;
-  color: #b0b0b0;
+  color: #e0e0e0;
   margin-bottom: 2rem;
   line-height: 1.6;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 .hero-buttons {
@@ -763,6 +768,58 @@ body {
   background: linear-gradient(135deg, #4fd1c7, #64ffda);
 }
 
+/* Brac University Specific Styles */
+.brac-offer {
+  margin-top: 4rem;
+  border: 2px solid rgba(100, 255, 218, 0.3);
+  background: rgba(100, 255, 218, 0.08);
+}
+
+.brac-offer:hover {
+  border-color: rgba(100, 255, 218, 0.5);
+  box-shadow: 0 25px 50px rgba(100, 255, 218, 0.15);
+}
+
+.brac-logo {
+  background: linear-gradient(135deg, #64ffda, #4fd1c7);
+}
+
+.brac-badge {
+  background: linear-gradient(135deg, #28a745, #20c997);
+}
+
+.brac-highlight {
+  background: rgba(100, 255, 218, 0.1);
+  border: 1px solid rgba(100, 255, 218, 0.2);
+}
+
+.brac-highlight i {
+  color: #64ffda;
+}
+
+.brac-treatments h3 {
+  color: #64ffda;
+  margin-top: 3rem;
+}
+
+.brac-card {
+  border: 1px solid rgba(100, 255, 218, 0.2);
+  background: rgba(100, 255, 218, 0.05);
+}
+
+.brac-card:hover {
+  border-color: rgba(100, 255, 218, 0.4);
+  box-shadow: 0 15px 30px rgba(100, 255, 218, 0.1);
+}
+
+.brac-icon {
+  background: linear-gradient(135deg, #64ffda, #4fd1c7);
+}
+
+.brac-card .student-price {
+  color: #64ffda;
+}
+
 /* Services Section */
 .services {
   padding: 100px 0;
@@ -881,15 +938,15 @@ body {
   transform: rotate(45deg);
 }
 
-/* OnlyFriends Exclusive Section */
-.exclusive {
+/* OnlyFans Exclusive Section */
+.onlyfans-exclusive {
   padding: 100px 0;
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%);
+  background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 50%, #1e1e1e 100%);
   position: relative;
   overflow: hidden;
 }
 
-.exclusive::before {
+.onlyfans-exclusive::before {
   content: "";
   position: absolute;
   top: 0;
@@ -898,40 +955,40 @@ body {
   bottom: 0;
   background: radial-gradient(
       circle at 20% 50%,
-      rgba(100, 255, 218, 0.1) 0%,
+      rgba(0, 123, 255, 0.1) 0%,
       transparent 50%
     ),
     radial-gradient(
       circle at 80% 20%,
-      rgba(100, 255, 218, 0.05) 0%,
+      rgba(0, 123, 255, 0.05) 0%,
       transparent 50%
     );
   pointer-events: none;
 }
 
-.exclusive-content {
+.onlyfans-exclusive .exclusive-content {
   position: relative;
   z-index: 2;
   margin-bottom: 4rem;
 }
 
-.exclusive-intro {
+.onlyfans-exclusive .exclusive-intro {
   margin-bottom: 4rem;
 }
 
-.exclusive-card {
-  background: rgba(255, 255, 255, 0.08);
+.onlyfans-exclusive .exclusive-card {
+  background: rgba(0, 123, 255, 0.1);
   padding: 3rem;
   border-radius: 20px;
   backdrop-filter: blur(15px);
-  border: 2px solid rgba(100, 255, 218, 0.2);
+  border: 2px solid rgba(0, 123, 255, 0.3);
   transition: all 0.3s ease;
   text-align: center;
   position: relative;
   overflow: hidden;
 }
 
-.exclusive-card::before {
+.onlyfans-exclusive .exclusive-card::before {
   content: "";
   position: absolute;
   top: 0;
@@ -941,95 +998,101 @@ body {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(100, 255, 218, 0.1),
+    rgba(0, 123, 255, 0.2),
     transparent
   );
   transition: left 0.5s ease;
 }
 
-.exclusive-card:hover::before {
+.onlyfans-exclusive .exclusive-card:hover::before {
   left: 100%;
 }
 
-.exclusive-card:hover {
+.onlyfans-exclusive .exclusive-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(100, 255, 218, 0.4);
-  box-shadow: 0 25px 50px rgba(100, 255, 218, 0.15);
+  border-color: rgba(0, 123, 255, 0.5);
+  box-shadow: 0 25px 50px rgba(0, 123, 255, 0.2);
 }
 
-.exclusive-icon {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, #64ffda, #4fd1c7);
+.onlyfans-logo {
+  width: 120px;
+  height: 120px;
+  background: #007bff;
   border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 2rem;
-  font-size: 2rem;
-  color: #0a0a0a;
-  box-shadow: 0 15px 30px rgba(100, 255, 218, 0.4);
+  box-shadow: 0 15px 30px rgba(0, 123, 255, 0.4);
   animation: float 6s ease-in-out infinite;
+  padding: 20px;
 }
 
-.exclusive-card h3 {
+.logo-img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.onlyfans-exclusive .exclusive-card h3 {
   color: #ffffff;
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
-  background: linear-gradient(135deg, #64ffda, #ffffff);
+  background: linear-gradient(135deg, #007bff, #ffffff);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.exclusive-card p {
+.onlyfans-exclusive .exclusive-card p {
   color: #e0e0e0;
   font-size: 1.1rem;
   line-height: 1.7;
   margin-bottom: 2rem;
 }
 
-.account-info {
+.onlyfans-exclusive .account-info {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
   margin-top: 2rem;
 }
 
-.info-item {
+.onlyfans-exclusive .info-item {
   display: flex;
   align-items: center;
   gap: 1rem;
   padding: 1rem;
-  background: rgba(100, 255, 218, 0.1);
+  background: rgba(0, 123, 255, 0.15);
   border-radius: 10px;
-  border: 1px solid rgba(100, 255, 218, 0.2);
+  border: 1px solid rgba(0, 123, 255, 0.3);
   transition: all 0.3s ease;
 }
 
-.info-item:hover {
-  background: rgba(100, 255, 218, 0.2);
+.onlyfans-exclusive .info-item:hover {
+  background: rgba(0, 123, 255, 0.25);
   transform: translateX(5px);
 }
 
-.info-item i {
-  color: #64ffda;
+.onlyfans-exclusive .info-item i {
+  color: #007bff;
   font-size: 1.2rem;
   flex-shrink: 0;
 }
 
-.info-item span {
+.onlyfans-exclusive .info-item span {
   color: #e0e0e0;
   font-size: 0.95rem;
 }
 
-.exclusive-services {
+.onlyfans-exclusive .exclusive-services {
   margin-bottom: 4rem;
 }
 
-.exclusive-services h3 {
-  color: #64ffda;
+.onlyfans-exclusive .exclusive-services h3 {
+  color: #007bff;
   font-size: 2rem;
   font-weight: 600;
   text-align: center;
@@ -1167,6 +1230,151 @@ body {
   transform: translateY(-3px);
   box-shadow: 0 15px 35px rgba(100, 255, 218, 0.4);
   background: linear-gradient(135deg, #4fd1c7, #64ffda);
+}
+
+/* Additional OnlyFans Styles */
+.onlyfans-exclusive .services-grid-exclusive {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.onlyfans-exclusive .exclusive-service-card {
+  background: rgba(0, 123, 255, 0.08);
+  padding: 2rem;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 123, 255, 0.2);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.onlyfans-exclusive .exclusive-service-card:hover {
+  transform: translateY(-8px);
+  background: rgba(0, 123, 255, 0.15);
+  border-color: rgba(0, 123, 255, 0.4);
+  box-shadow: 0 15px 30px rgba(0, 123, 255, 0.15);
+}
+
+.onlyfans-exclusive .service-icon-small {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 1.3rem;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+}
+
+.onlyfans-exclusive .exclusive-service-card h4 {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.onlyfans-exclusive .exclusive-service-card p {
+  color: #b0b0b0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.onlyfans-exclusive .exclusive-promise {
+  position: relative;
+  z-index: 2;
+}
+
+.onlyfans-exclusive .promise-card {
+  background: rgba(0, 123, 255, 0.1);
+  padding: 3rem;
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(0, 123, 255, 0.3);
+  text-align: center;
+  position: relative;
+}
+
+.onlyfans-exclusive .promise-card h3 {
+  color: #007bff;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.onlyfans-exclusive .promise-card p {
+  color: #e0e0e0;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.onlyfans-exclusive .promise-highlights {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.onlyfans-exclusive .highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #007bff;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  background: rgba(0, 123, 255, 0.15);
+  border-radius: 25px;
+  border: 1px solid rgba(0, 123, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.onlyfans-exclusive .highlight-item:hover {
+  background: rgba(0, 123, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.onlyfans-exclusive .highlight-item i {
+  font-size: 1.1rem;
+}
+
+.onlyfans-exclusive .btn-exclusive {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: #ffffff;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(0, 123, 255, 0.3);
+}
+
+.onlyfans-exclusive .btn-exclusive:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(0, 123, 255, 0.4);
+  background: linear-gradient(135deg, #0056b3, #004085);
+}
+
+.onlyfans-exclusive .section-title {
+  background: linear-gradient(135deg, #007bff, #ffffff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.onlyfans-exclusive .section-line {
+  background: linear-gradient(135deg, #007bff, #0056b3);
 }
 
 /* Location Section */
@@ -1701,30 +1909,30 @@ body {
     order: 2;
   }
 
-  .services-grid-exclusive {
+  .onlyfans-exclusive .services-grid-exclusive {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
 
-  .exclusive-card {
+  .onlyfans-exclusive .exclusive-card {
     padding: 2rem;
   }
 
-  .promise-card {
+  .onlyfans-exclusive .promise-card {
     padding: 2rem;
   }
 
-  .account-info {
+  .onlyfans-exclusive .account-info {
     grid-template-columns: 1fr;
   }
 
-  .promise-highlights {
+  .onlyfans-exclusive .promise-highlights {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
   }
 
-  .exclusive-service-card {
+  .onlyfans-exclusive .exclusive-service-card {
     padding: 1.5rem;
   }
 
@@ -1830,23 +2038,23 @@ body {
     font-size: 2rem;
   }
 
-  .exclusive-card {
+  .onlyfans-exclusive .exclusive-card {
     padding: 1.5rem;
   }
 
-  .promise-card {
+  .onlyfans-exclusive .promise-card {
     padding: 1.5rem;
   }
 
-  .exclusive-card h3 {
+  .onlyfans-exclusive .exclusive-card h3 {
     font-size: 1.5rem;
   }
 
-  .exclusive-services h3 {
+  .onlyfans-exclusive .exclusive-services h3 {
     font-size: 1.5rem;
   }
 
-  .exclusive-service-card {
+  .onlyfans-exclusive .exclusive-service-card {
     padding: 1rem;
   }
 
