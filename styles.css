@@ -364,6 +364,49 @@ body {
   line-height: 1.7;
 }
 
+.founder-info {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.founder-info .info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #e0e0e0;
+  padding: 0.75rem;
+  border-radius: 8px;
+  background: rgba(100, 255, 218, 0.08);
+  border: 1px solid rgba(100, 255, 218, 0.2);
+  transition: all 0.3s ease;
+}
+
+.founder-info .info-item:hover {
+  background: rgba(100, 255, 218, 0.15);
+  border-color: rgba(100, 255, 218, 0.3);
+  transform: translateY(-2px);
+}
+
+.founder-info .info-item i {
+  color: #64ffda;
+  font-size: 1.2rem;
+  width: 20px;
+  text-align: center;
+}
+
+.founder-info .info-item a {
+  color: #64ffda;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.founder-info .info-item a:hover {
+  color: #4fd1c7;
+  text-decoration: underline;
+}
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
