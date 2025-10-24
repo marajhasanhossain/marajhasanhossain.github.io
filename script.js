@@ -140,20 +140,18 @@ function initContactForm() {
         const submitBtn = form.querySelector('.btn-primary');
         const originalText = submitBtn.textContent;
         
-        submitBtn.textContent = 'Sending...';
+        submitBtn.textContent = 'Processing Booking...';
         submitBtn.disabled = true;
         
         setTimeout(() => {
-            submitBtn.textContent = 'Message Sent!';
-            submitBtn.style.background = '#4caf50';
-            
-            setTimeout(() => {
-                submitBtn.textContent = originalText;
-                submitBtn.style.background = '';
-                submitBtn.disabled = false;
-                form.reset();
+                submitBtn.textContent = 'Booking Confirmed!';
+                submitBtn.style.background = '#4caf50';
                 
-                // Remove focused class from form groups
+                setTimeout(() => {
+                    submitBtn.textContent = 'Book My Session';
+                    submitBtn.style.background = '';
+                    submitBtn.disabled = false;
+                    form.reset();                // Remove focused class from form groups
                 formGroups.forEach(group => {
                     group.classList.remove('focused');
                 });
@@ -191,10 +189,10 @@ function initTypingEffect() {
     if (!typingElement) return;
 
     const texts = [
-        'Hello, I\'m a Professional',
-        'Hello, I\'m a Developer',
-        'Hello, I\'m a Designer',
-        'Hello, I\'m a Consultant'
+        'Welcome to Velvet Aura Spa',
+        'Your Wellness Sanctuary',
+        'Traditional Thai Healing',
+        'Luxury Relaxation Haven'
     ];
     
     let textIndex = 0;
